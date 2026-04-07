@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#533a00",
+                    "primary-fixed": "#feb700",
+                    "surface-container-high": "#e2e3dd",
+                    "secondary": "#04647d",
+                    "secondary-dim": "#00576e",
+                    "tertiary-fixed": "#b9eeab",
+                    "primary-container": "#feb700",
+                    "tertiary": "#386631",
+                    "on-surface": "#2d2f2c",
+                    "surface-bright": "#f7f7f2",
+                    "inverse-primary": "#feb700",
+                    "inverse-on-surface": "#9c9d99",
+                    "on-primary-fixed": "#392700",
+                    "on-secondary-fixed-variant": "#005c74",
+                    "surface-tint": "#785500",
+                    "on-primary": "#fff1de",
+                    "surface-container-low": "#f1f1ec",
+                    "surface-variant": "#dcddd7",
+                    "secondary-fixed-dim": "#8cd3f0",
+                    "secondary-fixed": "#9ae1ff",
+                    "tertiary-fixed-dim": "#abdf9e",
+                    "on-secondary": "#e3f6ff",
+                    "surface-container": "#e8e9e3",
+                    "on-secondary-container": "#005267",
+                    "outline": "#767773",
+                    "on-surface-variant": "#5a5c58",
+                    "on-secondary-fixed": "#003d4f",
+                    "on-tertiary-fixed-variant": "#376430",
+                    "surface-dim": "#d3d5cf",
+                    "surface": "#f7f7f2",
+                    "on-tertiary-container": "#2d5a27",
+                    "primary": "#785500",
+                    "error-dim": "#b92902",
+                    "background": "#f7f7f2",
+                    "error": "#b02500",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-dim": "#694a00",
+                    "tertiary-container": "#b9eeab",
+                    "on-error-container": "#520c00",
+                    "primary-fixed-dim": "#ecaa00",
+                    "on-primary-fixed-variant": "#5f4200",
+                    "secondary-container": "#9ae1ff",
+                    "tertiary-dim": "#2d5927",
+                    "outline-variant": "#adada9",
+                    "on-tertiary-fixed": "#1a4716",
+                    "surface-container-highest": "#dcddd7",
+                    "on-error": "#ffefec",
+                    "inverse-surface": "#0d0f0c",
+                    "on-tertiary": "#d2ffc4",
+                    "on-background": "#2d2f2c",
+                    "error-container": "#f95630"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Work Sans"
+                    ],
+                    "label": [
+                            "Work Sans"
+                    ]
+            },
+            "animation": {
+                "scroll": "scroll 40s linear infinite",
+            },
+            "keyframes": {
+                "scroll": {
+                    "0%": { transform: "translateX(0)" },
+                    "100%": { transform: "translateX(-50%)" },
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7f7f2]/80 dark:bg-stone-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 max-w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#785500] dark:text-[#feb700]" data-icon="bakery_dining">bakery_dining</span>
+<span class="text-2xl font-black text-[#2d2f2c] dark:text-[#f7f7f2] tracking-tighter">MOGO</span>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#785500] dark:text-[#feb700] font-bold" href="#">Bakehouse</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Slowbar</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Orders</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Find Us</a>
+</div>
+<button class="text-[#785500] dark:text-[#feb700] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</nav>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[700px]">
+<!-- Main Hero Card -->
+<div class="md:col-span-8 bg-primary-container rounded-xl p-8 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-surface-container-lowest px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-on-primary-container shadow-sm">
+                            slow-crafted since 2020
+                        </span>
+<span class="flex items-center text-xs font-bold text-on-primary-container">
+                            4.8 <span class="material-symbols-outlined text-sm ml-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-primary-container leading-none tracking-tighter max-w-md">
+                        SWEET MEETS SLOW
+                    </h1>
+</div>
+<!-- Main Hero Image Overlay -->
+<div class="absolute right-0 bottom-12 w-full md:w-3/4 h-2/3 md:h-full flex justify-center md:justify-end items-end pointer-events-none translate-y-12">
+<img class="w-auto h-full object-contain drop-shadow-2xl rotate-6 transform hover:rotate-0 transition-transform" data-alt="Studio photo of stacked artisan matcha buns with glossy green glaze and mochi donuts with vibrant pastel icing on a warm background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwAbKjY8R-XLiQNMghMlJzNtf5q0Hxb7qSPPpL6Tnwixqyg0WjCShzX3a_8wDhFC04Xk9K2Kegnoot5gW43QPkSOT6sjhid8chXwmmKrH1qt2Y7KkbI8c-gC7HjiYmccAvseMZBgVdUTYKcNqfNg7Bgw9bF8ryUa5IUY1JCBsfi48ABU2vHL7UDcgvXP4VDkDSecIFKjdjBV1E7qaUdUUJAQUekYEYMfzooQa6qeWcf23_zEPrqhrAeizLC0bPsg6X7Gzofc_NLc"/>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-end gap-6">
+<div class="bg-tertiary text-on-tertiary px-6 py-3 rounded-full text-xl font-bold flex items-center gap-2 shadow-lg scale-110 md:scale-125 mb-12 md:mb-0">
+                        FROM ₹199
+                    </div>
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-4 border-primary-container bg-surface-container-high overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up of a professional barista preparing a slow drip coffee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6iRxF0n-cUacqT6KJ0UqZTeGVrII9OM71CPNV4dcjR0HCeJUuZRW3RnlwMNXUKygcckwHX984Y_5eVQJNWGUNFyWHLzXe_uxrdsfrjN55HnTuf6YqL-44Ii6LRZcfcBCWZpO-v0PwBbZeMNC-Hkt21pAlewvX9eD0kXYsmabEpX69VB9mnFgCxgGRMInl098qlDLgh_Xn0RA4ahEm_ja94dNbfekQpnNmypznLnxmIHP8KNkyRrNMYR1KKPW46r6uFwNWLd9vpzI"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-container bg-surface-container-high overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A assortment of freshly baked melon pan on a cooling rack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqy4PmkYyZRc9lcH3ilLyl2dte6al6y11tgJHrSgp6BLsIR8R6Qz02npAollIZkXxb9s2EQPk1OhYDvHv32kVEaAezj_kLhLGOvx8oqsQ2eOVhSaWuhVSwhi2Ehk-sQiYG1Ck_jyVgqUPgfLSGziep9OF2EixfldqTiiDI4RqIltHrPp5hhk-RUoXIS_xYtMrJEFX27RRjuJ4dTQF5fjLP9THy5tn-c_Exq1DN28c69lxBB5-o0gLRdOVfyhg5JCfAc10Gd5njCys"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-container bg-surface-container-high overflow-hidden shadow-sm flex items-center justify-center bg-white">
+<span class="text-xs font-bold text-primary">+12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Cards -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Slowbar School -->
+<div class="flex-1 bg-secondary-container rounded-xl p-6 relative overflow-hidden flex flex-col justify-between group">
+<div class="relative z-10">
+<h3 class="text-2xl font-black text-on-secondary-container leading-none mb-2">SLOWBAR<br/>SCHOOL</h3>
+<p class="text-sm font-medium text-on-secondary-container opacity-80">Brewing perfection workshops</p>
+</div>
+<div class="absolute -right-4 -bottom-4 w-40 h-40 opacity-40 md:opacity-100 transition-transform group-hover:scale-110">
+<img class="w-full h-full object-cover rounded-full" data-alt="Barista hands pouring latte art in a sunlit modern cafe setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC56_0RtTZgA0ft3VngXNg-FgSDf0PPlAA-QqrOcU35_eSYTXjWOKebfKh9QKNBHzmRPkQzufjiKa3p5nDy14opkOE5W6jOMwWB4KjzpJU2rK3ULuuybAXYPZL94pf1yxl_fyjlbXdoGanKURIu6Jd0xQCWz3cZkigsA2ss5Ryt0ffAepkJCUutMJiDfVIY6RxjICQRwNaN31Z-hWz2vXWtSfLUu6XwiJtgfa8A6wUdkmfhziqjlzDK7Y56dQS8tZ4VINiy_vMVihU"/>
+</div>
+<button class="relative z-10 w-fit flex items-center gap-2 bg-on-secondary-container text-white px-5 py-2 rounded-full text-xs font-bold transition-all hover:scale-105 active:scale-95">
+                        EXPLORE
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</button>
+</div>
+<!-- Everyday Specials -->
+<div class="flex-1 bg-tertiary-container rounded-xl p-6 relative overflow-hidden flex flex-col justify-between group">
+<div class="relative z-10">
+<div class="bg-tertiary text-on-tertiary inline-block px-3 py-1 rounded-full text-[10px] font-bold mb-4">₹149 / ₹199</div>
+<h3 class="text-2xl font-black text-on-tertiary-container leading-none">EVERYDAY<br/>SPECIALS</h3>
+<p class="text-sm font-medium text-on-tertiary-container opacity-80 mt-2">Freshly baked, delivered daily</p>
+</div>
+<div class="absolute -right-8 -bottom-8 w-48 h-48 transition-transform group-hover:rotate-6">
+<img class="w-full h-full object-contain" data-alt="A delicious fruit tart with vibrant berries and glossy glaze on a light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxcPalz8-XWFBHV-u5N6YDS4top4xfGtFkUROQyGATlh3QF49owBhwUrzOgqZnNLGHA8huOGQPorTYFgwarK0m0FYRPeuVy9GncX6Wicfu1xiZVLeiBPYN0WH0wVwPiSNyhNyMx18sUKzV5qeLNZByru7ZVffc2rAJAD2iWlG-7kqTCxmppe_a9d-3rL-sQh-d9ZgbW7i1fvNJ8pQYKO-AIE3bPaj_Vd4bYuDdhUPSfYLgru_4x1LMOZr_SLN_KxwuiHXcLsoKk38"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Menu Categories -->
+<section class="mt-20">
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:scale-105">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="local_cafe">local_cafe</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Slow Brew</span>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:scale-105">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Asian Bakes</span>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:scale-105">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="icecream">icecream</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Desserts</span>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:scale-105">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Tea Collection</span>
+</div>
+</div>
+</section>
+<!-- Top Picks Section -->
+<section class="mt-24">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-4xl font-black tracking-tight text-on-surface">TOP PICKS</h2>
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Matcha Bun -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex items-center gap-4 group transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="w-24 h-24 flex-shrink-0 bg-surface rounded-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Close-up of a soft green matcha bun with cream filling and dusting of matcha powder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7hpiylzCpxmEi_f0fKAp1NAV2glSSGTu4EhS9jEc_JHoK2Df40il83hHvBxWQLkQgHXSx64BxJmyNHEn_3oEzr-scCLZruy9mmh0kaNdTZ_REI5kmSGW8L9M71F7zSP392e1akz6eXiwx86yZvZTmtRB2EhdZbDbydX7_inlppu6LBgy5kQ7wdpnPziWnFWSrSf6Xtv8Sxsgvj7RqxX6YtAupjCP0JqD9jNIoisbtsiEB9eFhQYCpCbCf-VsUyxXHWadv6TCaag"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg">Matcha Bun</h4>
+<p class="text-xs text-on-surface-variant mb-3">Creamy umami center, soft dough</p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-primary">₹249</span>
+<button class="w-10 h-10 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center transition-all active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Melon Pan -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex items-center gap-4 group transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="w-24 h-24 flex-shrink-0 bg-surface rounded-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Traditional Japanese melon pan bread with its signature crisp cookie crust pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1X-MkGAXkH5b1Cmo5MOYFg8RHHYnBfbQLxx9ngpvT0qXJhXD6JiFIjP4wRURoOAEHhECswJUofwKdnTZ7bijmJbJZw2AaAvKMXSQqxXQmtXruRbfbNIQaHllS7X4Cpzi2JjGiFRLoXL3QIfaJI4maKnt_rx7nQngPYHygNrM5rxSThNxS2UCDNqWfoyTuBirZDdYZJC481AvclMVdqXwCJv_Uk9cqRSum5KqbAXQLxIWyXTb5-T7Mk8WnC8W7WAbwnYhXt-h-_Sk"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg">Melon Pan</h4>
+<p class="text-xs text-on-surface-variant mb-3">Crispy cookie crust, fluffy inside</p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-primary">₹199</span>
+<button class="w-10 h-10 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center transition-all active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Red Bean Bun -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex items-center gap-4 group transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="w-24 h-24 flex-shrink-0 bg-surface rounded-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Classic Asian red bean bun with sesame seeds on top and dark sweet filling visible" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPR_m0yw3huL-jFWlYzrTiHSoSR2TVHZ2DZtMrOFKGUC6LrXvwpUlSotwwKEo_SBcrRvakuqPjEc3w4YDT9cdxjZa_cOjlNpi7pcT33ct0BEqr983HnipomfiS9sPfNw4rOCOdVhgZ3aUvkXiaMl04jg2TiVcfearMpAXMURzGbubF1gpLMXr5FgKur70Tkhdb7-QEQswqfrmyIuquL3Xd5E6Rsof6CBRPTAanIVzEPkmirALQ_byNfhLrmZTeBiVlihdhXkrCkwg"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg">Red Bean Bun</h4>
+<p class="text-xs text-on-surface-variant mb-3">Traditional sweet adzuki filling</p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-primary">₹189</span>
+<button class="w-10 h-10 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center transition-all active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Story Section -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-low rounded-xl overflow-hidden p-8 md:p-16">
+<div>
+<h2 class="text-4xl md:text-5xl font-black leading-none tracking-tight text-on-surface mb-6">
+                    WHERE ASIAN FLAVORS MEET SLOW-CRAFTED COFFEE
+                </h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                    At MOGO, we believe in the art of the pause. Our breads are proofed for 18 hours using artisanal techniques, and our beans are hand-selected from micro-lots across South Asia. It's a dialogue between traditional Asian baking and contemporary third-wave coffee culture.
+                </p>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="handshake">handshake</span>
+<div>
+<p class="font-bold">Doughy Precision</p>
+<p class="text-sm opacity-60">Crafted by hand, every single day.</p>
+</div>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden h-[400px]">
+<img class="w-full h-full object-cover" data-alt="Close up of steaming coffee being poured into an artisanal ceramic mug in a soft-lit room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8p9_uX9beE-Yfl94je_hYnkgiD_iZ8z1eXZTP8-XRWJ950UKi6p0uPJHba8yWtAhVxQcAWJx1uvQSEXixyViVBzrwMLOlA-fAqZmrDekknkquZvUEVf8-5W9a3JLKQPE4CraJ_PGSe0UP6W_0AqJ_rRL8-Ev-IwBj_OjI23rgi2hLkDYaeT-d_OYoCBSLG4wFeBBAU5KAiJsXqks-qa98pnq66C4RpzIGmZ3uBZSgZHdp_KO8mHb4bAbjRdaYo3c2GHyO4DmkSQk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+</section>
+<!-- CTA / Offer Section -->
+<section class="mt-20 bg-primary-container rounded-xl p-8 md:p-16 text-center relative overflow-hidden">
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-black text-on-primary-container tracking-tighter mb-4">BUY 5 DRINKS, GET 1 FREE</h2>
+<p class="text-on-primary-container/80 text-xl font-medium mb-10">Our digital loyalty card is here. Join the club and start earning your rewards today.</p>
+<button class="bg-on-primary-container text-white px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-105 active:scale-95 transition-all">
+                    JOIN THE CLUB
+                </button>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -left-10 -top-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]" data-icon="local_cafe">local_cafe</span>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]" data-icon="bakery_dining">bakery_dining</span>
+</div>
+</section>
+<!-- Google Reviews Section -->
+<section class="mt-32 overflow-hidden">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-4xl font-black tracking-tight text-on-surface">WHAT PEOPLE ARE SAYING</h2>
+<div class="flex gap-2">
+<div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-sm">google</span></div>
+<span class="font-bold flex items-center text-sm">4.8 Rating</span>
+</div>
+</div>
+<div class="relative flex overflow-x-hidden">
+<div class="flex animate-scroll whitespace-nowrap py-4">
+<!-- Review Card 1 -->
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User" class="w-10 h-10 rounded-full bg-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6iRxF0n-cUacqT6KJ0UqZTeGVrII9OM71CPNV4dcjR0HCeJUuZRW3RnlwMNXUKygcckwHX984Y_5eVQJNWGUNFyWHLzXe_uxrdsfrjN55HnTuf6YqL-44Ii6LRZcfcBCWZpO-v0PwBbZeMNC-Hkt21pAlewvX9eD0kXYsmabEpX69VB9mnFgCxgGRMInl098qlDLgh_Xn0RA4ahEm_ja94dNbfekQpnNmypznLnxmIHP8KNkyRrNMYR1KKPW46r6uFwNWLd9vpzI"/>
+<div>
+<p class="font-bold text-sm">Ananya Sharma</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"Best matcha buns I've had outside of Kyoto. The slow drip coffee is a game changer for my mornings!"</p>
+</div>
+<!-- Review Card 2 -->
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User" class="w-10 h-10 rounded-full bg-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqy4PmkYyZRc9lcH3ilLyl2dte6al6y11tgJHrSgp6BLsIR8R6Qz02npAollIZkXxb9s2EQPk1OhYDvHv32kVEaAezj_kLhLGOvx8oqsQ2eOVhSaWuhVSwhi2Ehk-sQiYG1Ck_jyVgqUPgfLSGziep9OF2EixfldqTiiDI4RqIltHrPp5hhk-RUoXIS_xYtMrJEFX27RRjuJ4dTQF5fjLP9THy5tn-c_Exq1DN28c69lxBB5-o0gLRdOVfyhg5JCfAc10Gd5njCys"/>
+<div>
+<p class="font-bold text-sm">Rahul Varma</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"The melon pan is perfectly crunchy on the outside and so soft inside. MOGO is my new favorite weekend spot."</p>
+</div>
+<!-- Review Card 3 -->
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">SD</div>
+<div>
+<p class="font-bold text-sm">Siddharth Das</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"Authentic flavors and a very peaceful vibe. The aesthetic is 10/10, just like their artisan coffee."</p>
+</div>
+<!-- Duplicate cards for infinite loop -->
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User" class="w-10 h-10 rounded-full bg-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6iRxF0n-cUacqT6KJ0UqZTeGVrII9OM71CPNV4dcjR0HCeJUuZRW3RnlwMNXUKygcckwHX984Y_5eVQJNWGUNFyWHLzXe_uxrdsfrjN55HnTuf6YqL-44Ii6LRZcfcBCWZpO-v0PwBbZeMNC-Hkt21pAlewvX9eD0kXYsmabEpX69VB9mnFgCxgGRMInl098qlDLgh_Xn0RA4ahEm_ja94dNbfekQpnNmypznLnxmIHP8KNkyRrNMYR1KKPW46r6uFwNWLd9vpzI"/>
+<div>
+<p class="font-bold text-sm">Ananya Sharma</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"Best matcha buns I've had outside of Kyoto. The slow drip coffee is a game changer for my mornings!"</p>
+</div>
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User" class="w-10 h-10 rounded-full bg-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqy4PmkYyZRc9lcH3ilLyl2dte6al6y11tgJHrSgp6BLsIR8R6Qz02npAollIZkXxb9s2EQPk1OhYDvHv32kVEaAezj_kLhLGOvx8oqsQ2eOVhSaWuhVSwhi2Ehk-sQiYG1Ck_jyVgqUPgfLSGziep9OF2EixfldqTiiDI4RqIltHrPp5hhk-RUoXIS_xYtMrJEFX27RRjuJ4dTQF5fjLP9THy5tn-c_Exq1DN28c69lxBB5-o0gLRdOVfyhg5JCfAc10Gd5njCys"/>
+<div>
+<p class="font-bold text-sm">Rahul Varma</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"The melon pan is perfectly crunchy on the outside and so soft inside. MOGO is my new favorite weekend spot."</p>
+</div>
+<div class="inline-block w-[320px] mx-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline/5 whitespace-normal">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">SD</div>
+<div>
+<p class="font-bold text-sm">Siddharth Das</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"Authentic flavors and a very peaceful vibe. The aesthetic is 10/10, just like their artisan coffee."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location / Map Section -->
+<section class="mt-32">
+<h2 class="text-4xl font-black tracking-tight text-on-surface mb-10 text-center">FIND US</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-lg border border-outline/5 flex flex-col md:flex-row min-h-[450px]">
+<!-- Map UI Mockup -->
+<div class="relative flex-1 bg-[#e0dfdb] overflow-hidden min-h-[300px]">
+<!-- Simple Map Background Pattern -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#785500 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<!-- Map Pin -->
+<div class="relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-on-surface text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap shadow-lg">MOGO Bakehouse</div>
+<span class="material-symbols-outlined text-5xl text-error drop-shadow-md" style="font-variation-settings: 'FILL' 1">location_on</span>
+<div class="w-4 h-4 bg-black/20 rounded-full blur-[2px] mx-auto -mt-2 scale-x-150"></div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute right-4 bottom-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-on-surface"><span class="material-symbols-outlined">add</span></button>
+<button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-on-surface"><span class="material-symbols-outlined">remove</span></button>
+</div>
+</div>
+<!-- Location Details -->
+<div class="w-full md:w-80 p-8 flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-8">
+<h3 class="text-2xl font-black text-on-surface mb-4">Visit the Slowbar</h3>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                            Plot 42, 100 Feet Rd, Indiranagar,<br/>
+                            Bengaluru, Karnataka 560038
+                        </p>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+<span class="font-medium">8:00 AM - 10:00 PM</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<span class="font-medium">+91 98765 43210</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-on-surface text-surface py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        GET DIRECTIONS
+                        <span class="material-symbols-outlined text-sm">directions</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-32 bg-white dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-start px-8 md:px-16 max-w-7xl mx-auto">
+<div class="mb-12 md:mb-0">
+<div class="text-3xl font-black text-[#2d2f2c] dark:text-[#f7f7f2] mb-4 tracking-tighter">MOGO</div>
+<p class="font-['Work_Sans'] text-sm tracking-normal text-[#2d2f2c] dark:text-stone-400 max-w-xs">
+                    Asian Bakehouse + Slowbar. Doughy Precision in every bite and every brew.
+                </p>
+<div class="flex gap-4 mt-6">
+<a class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center text-primary hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center text-primary hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<h5 class="text-[10px] font-bold uppercase tracking-widest text-[#785500]">Explore</h5>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Menu</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Sourcing</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Locations</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[10px] font-bold uppercase tracking-widest text-[#785500]">Legal</h5>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Privacy</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Terms</a>
+<a class="text-[#2d2f2c] dark:text-stone-400 hover:text-[#04647d] dark:hover:text-[#9ae1ff] transition-colors" href="#">Shipping</a>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-surface-container pt-8 text-center px-8">
+<p class="font-['Work_Sans'] text-xs tracking-normal text-on-surface-variant opacity-60">© 2024 MOGO Asian Bakehouse + Slowbar. Doughy Precision.</p>
+</div>
+</footer>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full h-24 flex justify-around items-center px-4 pb-4 bg-[#f7f7f2]/90 dark:bg-stone-900/90 backdrop-blur-lg z-50 rounded-t-[3rem] shadow-[0px_-10px_30px_rgba(45,47,44,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#feb700] dark:bg-[#785500] text-[#2d2f2c] dark:text-[#f7f7f2] rounded-full px-6 py-2 transition-transform hover:scale-105 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="breakfast_dining">breakfast_dining</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-widest">Bakehouse</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d2f2c] dark:text-stone-500 opacity-60 transition-transform hover:scale-105 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-widest">Slowbar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d2f2c] dark:text-stone-500 opacity-60 transition-transform hover:scale-105 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-widest">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d2f2c] dark:text-stone-500 opacity-60 transition-transform hover:scale-105 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-widest">Find Us</span>
+</a>
+</div>
+</body></html>
